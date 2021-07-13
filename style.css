@@ -125,6 +125,10 @@ body {
     background-color: var(--body-color);
 }
 
+#header.scroll {
+    box-shadow: 0px 0px 12px 0 rgba(0, 0, 0, .15);
+}
+
 main {
     margin-top: calc(var(--header-height) + 2rem);
 }
@@ -181,10 +185,17 @@ nav ul li a:hover::after {
 nav .menu {
     opacity: 0;
     visibility: hidden;
+    top: -20rem;
+    transition: .2s;
+}
+
+nav .menu ul {
+    display: none;
 }
 
 /* ====== MOSTRAR MENU ===================== */
 nav.show .menu {
+    display: grid;
     opacity: 1;
     visibility: visible;
 
@@ -195,11 +206,11 @@ nav.show .menu {
     position: fixed;
     top: 0;
     left: 0;
+    place-content: center;
 }
 
-nav.show .menu {
+nav.show .menu ul {
     display: grid;
-    place-content: center;
 }
 
 nav.show ul.grid {
@@ -219,11 +230,15 @@ nav .icon-close {
 
     position: absolute;
     right: 1.5rem;
+    top: -1.5rem;
+
+    transition: .2s;
 }
 
 nav.show i.icon-close {
     visibility: visible;
     opacity: 1;
+    top: 1.5rem;
 }
 
 /* ====== HOME ===================== */
