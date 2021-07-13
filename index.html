@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="assets/fonts/style.css">
-    
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,52 +116,59 @@
         <div class="divider-1"></div>
 
         <section class="section" id="testimonials">
-            <div class="container grid">
+            <div class="container">
                 <header>
                     <h2 class="title">Depoimentos de quem já passou por aqui</h2>
                 </header>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span>
-                                Eu sou cliente do Beautysalon há 5 anos e não troco por nada! Certamente meu cabelo mudou muito depois que comecei a tratar somente com produtos naturais e veganos. São profissionais incríveis e qualificados.
-                            </p>
-                            <cite>
-                                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Foto de Wanessa Souza">
-                                Wanessa Souza
-                            </cite>
-                        </blockquote>
+                <div class="testimonials swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Eu sou cliente do Beautysalon há 5 anos e não troco por nada! Certamente meu cabelo mudou muito depois que comecei a tratar somente com produtos naturais e veganos. São profissionais incríveis e qualificados.
+                                </p>
+                                <cite>
+                                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Foto de Wanessa Souza">
+                                    Wanessa Souza
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.
+                                </p>
+                                <cite>
+                                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Foto de Luna Falcão">
+                                    Luna Falcão
+                                </cite>
+                            </blockquote>
+                        </div>
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates assumenda ipsa corrupti? Tempora cupiditate ut eaque quisquam, porro iure facilis eos, alias dolor id dolorem molestias vitae in veniam?
+                                </p>
+                                <cite>
+                                    <img src="https://randomuser.me/api/portraits/women/72.jpg" alt="Foto de Emilly Linick">
+                                    Emilly Linick
+                                </cite>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span>
-                                Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.
-                            </p>
-                            <cite>
-                                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Foto de Luna Falcão">
-                                Luna Falcão
-                            </cite>
-                        </blockquote>
-                    </div>
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates assumenda ipsa corrupti? Tempora cupiditate ut eaque quisquam, porro iure facilis eos, alias dolor id dolorem molestias vitae in veniam?
-                            </p>
-                            <cite>
-                                <img src="https://randomuser.me/api/portraits/women/72.jpg" alt="Foto de Emilly Linick">
-                                Emilly Linick
-                            </cite>
-                        </blockquote>
-                    </div>
+                    <div class="swiper-pagination"></div>
+                    
                 </div>
+
+                
             </div>
         </section>
     </main>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
