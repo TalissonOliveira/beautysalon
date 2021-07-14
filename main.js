@@ -16,16 +16,16 @@ for (const link of links) {
 }
 
 /* Header shadow */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight /* offsetHeight -> deslocamento da altura */
+function changeHeaderWhenScroll() {
+    const header = document.querySelector('#header')
+    const navHeight = header.offsetHeight /* offsetHeight -> deslocamento da altura */
 
-window.addEventListener('scroll', () => {
     if (window.scrollY >= navHeight) {
         header.classList.add('scroll')
     } else {
         header.classList.remove('scroll')
     }
-})
+}
 
 /* Testimonials carousel slider swiper */
 const swiper = new Swiper('.swiper-container', {
@@ -57,12 +57,19 @@ scrollReveal.reveal(
     { interval: 100 }
 )
 
-/* back to top */
-const backToTopButton = document.querySelector('.back-to-top')
-window.addEventListener('scroll', () => {
+/* Back to top */
+function backToTop() {
+    const backToTopButton = document.querySelector('.back-to-top')
+
     if (window.scrollY >= 700) {
         backToTopButton.classList.add('show')
     } else {
         backToTopButton.classList.remove('show')
     }
+}
+
+/* When scroll */
+window.addEventListener('scroll', () => {
+    changeHeaderWhenScroll()
+    backToTop()
 })
