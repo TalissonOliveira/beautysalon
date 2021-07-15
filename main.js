@@ -16,10 +16,9 @@ for (const link of links) {
 }
 
 /* Header shadow */
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight /* offsetHeight -> deslocamento da altura */
 function changeHeaderWhenScroll() {
-    const header = document.querySelector('#header')
-    const navHeight = header.offsetHeight /* offsetHeight -> deslocamento da altura */
-
     if (window.scrollY >= navHeight) {
         header.classList.add('scroll')
     } else {
@@ -63,9 +62,8 @@ scrollReveal.reveal(
 )
 
 /* Back to top */
+const backToTopButton = document.querySelector('.back-to-top')
 function backToTop() {
-    const backToTopButton = document.querySelector('.back-to-top')
-
     if (window.scrollY >= 700) {
         backToTopButton.classList.add('show')
     } else {
@@ -73,8 +71,37 @@ function backToTop() {
     }
 }
 
+
+/* Active menu in current section */
+
+const sections = document.querySelectorAll('main section[id]') // Pegar todas as seções que contém id
+function activateMenuAtCurrentSection() {
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+    for (const section of sections) {
+        const sectionTop = section.offsetTop // Topo da section
+        const sectionHeight = section.offsetHeight // Altura da section
+        const sectionId = section.getAttribute('id')
+
+        const checkpointStart = checkpoint >= sectionTop // Definir checkpoint inicial
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight // Definir checkpoint final
+
+        if (checkpointStart && checkpointEnd) { // Entre os dois checkpoints
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.add('active')
+        } else {
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.remove('active')
+        }
+    }
+
+}
+
 /* When scroll */
 window.addEventListener('scroll', () => {
     changeHeaderWhenScroll()
     backToTop()
+    activateMenuAtCurrentSection()
 })
